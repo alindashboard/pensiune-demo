@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
-import { submitReservation } from '@/app/items/[id]/actions'
+import { submitReservation } from '@/app/camere/[id]/actions'
 import { SITE_CONFIG } from '@/lib/config'
 import type { Item } from '@/types/database'
 

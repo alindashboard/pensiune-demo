@@ -111,3 +111,52 @@ insert into public.site_settings (key, value) values
   ('benefits',      '["Beneficiu 1", "Beneficiu 2", "Beneficiu 3", "Beneficiu 4"]'),
   ('maps_embed',    'null')
 on conflict (key) do nothing;
+
+-- ============================================================
+-- Pensiune Casa din Livadă — Demo seed data
+-- Run this section after the schema above
+-- ============================================================
+
+insert into public.items (name, description, price, price_unit, capacity, features, available) values
+(
+  'Camera Dublă Standard',
+  'Cameră confortabilă cu pat dublu și baie privată. Vedere la grădina înflorită. Ideală pentru cupluri sau călători solitari care doresc confort la un preț accesibil.',
+  250, 'noapte', 2,
+  ARRAY['Pat dublu', 'Baie privată', 'TV LED', 'WiFi gratuit', 'Vedere grădină', 'Aer condiționat'],
+  true
+),
+(
+  'Camera Dublă Deluxe',
+  'Cameră premium cu pat king-size, cadă și balcon privat cu vedere la munți. Minibar, halate și papuci de baie incluși. Ideal pentru o escapadă romantică.',
+  350, 'noapte', 2,
+  ARRAY['Pat king-size', 'Cadă și duș', 'Balcon privat', 'Minibar', 'Vedere munți', 'WiFi gratuit', 'TV LED', 'Halate & papuci'],
+  true
+),
+(
+  'Camera Twin',
+  'Cameră cu două paturi single, perfectă pentru prieteni sau colegi de călătorie. Baie privată modernă, spațiu generos.',
+  250, 'noapte', 2,
+  ARRAY['2 paturi single', 'Baie privată', 'WiFi gratuit', 'TV LED', 'Spațiu depozitare'],
+  true
+),
+(
+  'Camera Triplă',
+  'Cameră spațioasă cu pat dublu și un pat single, potrivită pentru familii mici sau grupuri de 3. Vedere la livada de meri a pensiunii.',
+  350, 'noapte', 3,
+  ARRAY['Pat dublu + pat single', 'Baie privată', 'Vedere livadă', 'WiFi gratuit', 'TV LED', 'Masă și scaune'],
+  true
+),
+(
+  'Apartamentul Familial',
+  'Apartament cu două camere separate, bucătărie complet utilată și terasă privată. Ideal pentru familii cu copii. Loc de joacă la 50 m distanță.',
+  450, 'noapte', 4,
+  ARRAY['2 camere separate', 'Bucătărie utilată', 'Terasă privată', 'WiFi gratuit', '2 băi', 'TV LED', 'Mașină de spălat', 'Loc de joacă'],
+  true
+),
+(
+  'Suite Panoramic',
+  'Suita noastră de lux cu jacuzzi, living separat și balcon de 180° cu panoramă montană. Mic dejun servit în cameră inclus. Cea mai romantică alegere din pensiune.',
+  500, 'noapte', 2,
+  ARRAY['Pat king-size', 'Living separat', 'Jacuzzi', 'Balcon 180° panoramic', 'Mic dejun în cameră', 'WiFi gratuit', 'TV LED 55"', 'Minibar premium', 'Halate & papuci', 'Produse premium baie'],
+  true
+);
