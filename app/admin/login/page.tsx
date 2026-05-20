@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Loader2, Car } from 'lucide-react'
+import { Loader2 } from 'lucide-react'
+import { SITE_CONFIG } from '@/lib/config'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -41,11 +42,14 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4">
       <div className="w-full max-w-sm">
         <div className="flex items-center justify-center gap-2 mb-8">
-          <div className="h-10 w-10 rounded-full bg-slate-900 flex items-center justify-center">
-            <Car className="h-5 w-5 text-white" />
+          <div
+            className="h-10 w-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+            style={{ backgroundColor: SITE_CONFIG.branding.primaryColor }}
+          >
+            C
           </div>
           <div>
-            <p className="font-bold text-sm">Expert Doi Trans</p>
+            <p className="font-bold text-sm">{SITE_CONFIG.business.name}</p>
             <p className="text-xs text-muted-foreground">Panou Admin</p>
           </div>
         </div>
