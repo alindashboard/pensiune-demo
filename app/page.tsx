@@ -93,7 +93,7 @@ export default async function HomePage() {
       <section className="relative overflow-hidden text-white">
         <div className="absolute inset-0">
           <Image
-            src="/cabin-landscape.jpg"
+            src="/pensiune-background.png"
             alt="Casa din Livadă — vedere panoramică"
             fill
             className="object-cover object-center"
