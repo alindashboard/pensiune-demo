@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Phone, MapPin, Navigation, Star, Wifi, Coffee, Trees, Mountain, Castle, Bike } from 'lucide-react'
 import { Navbar } from '@/components/Navbar'
@@ -89,8 +90,17 @@ export default async function HomePage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden ph-hero text-white">
-        <div className="absolute inset-0 bg-black/30" />
+      <section className="relative overflow-hidden text-white">
+        <div className="absolute inset-0">
+          <Image
+            src="/cabin-landscape.jpg"
+            alt="Casa din Livadă — vedere panoramică"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/45" />
+        </div>
         <div className="relative z-10 max-w-5xl mx-auto px-4 py-28 md:py-36 text-center">
           <div
             className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6"

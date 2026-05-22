@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { DM_Sans, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import { SITE_CONFIG } from '@/lib/config'
+import { PageTransition } from '@/components/PageTransition'
 
 const dmSans = DM_Sans({
   variable: '--font-sans',
@@ -54,7 +55,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ro" className={`${dmSans.variable} ${playfair.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <PageTransition>{children}</PageTransition>
+      </body>
     </html>
   )
 }
