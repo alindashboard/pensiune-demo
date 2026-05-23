@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { Users, ArrowRight } from 'lucide-react'
 import { S } from '@/lib/strings'
@@ -30,8 +31,17 @@ export function RoomCard({ room, gradientIndex = 0 }: RoomCardProps) {
 
   return (
     <Link href={`/camere/${room.id}`} className="group block rounded-2xl border bg-card overflow-hidden card-hover">
-      <div className={`relative h-48 ${gradient} flex items-end`}>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+      <div className={`relative h-48 ${!room.image_url ? gradient : ''} flex items-end`}>
+        {room.image_url && (
+          <Image
+            src={room.image_url}
+            alt={room.name}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
         {room.available ? (
           <span className="absolute top-3 right-3 text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-500 text-white">
             {S.rooms.available}
